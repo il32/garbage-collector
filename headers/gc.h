@@ -9,7 +9,7 @@ typedef struct gc gc_t;
 /// @param argc, argv The argc adress and the argv
 /// @pre argc and argc cannot be NULL
 /// @return A new context of garbage collector in success, NULL otherwise
-gc_t* gc_create(int const *argc, char const * const argv[]);
+gc_t* gc_create(int *argc, char * argv[]);
 
 /// @brief Destroy a garbage colletcor context
 /// @param gc The context of the garbage collector
