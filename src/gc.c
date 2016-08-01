@@ -65,7 +65,7 @@ static void sweep(gc_t *gc) {
 
 // interface
 
-gc_t* gc_create(int const * argc, char const * const argv[]) {
+gc_t* gc_create(int * argc, char * argv[]) {
 	assert(argc != NULL && "Wrong param");
 	assert(argv != NULL && "Wrong param");
 	assert(argv[*argc] == NULL && "Bad argc and argv arguments");
