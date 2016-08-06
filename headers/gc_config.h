@@ -9,3 +9,4 @@
 
 #define GC_PADDING_SIZE (sizeof(struct{ int A; char B; }) - sizeof(int))
 #define GC_MAX_OBJ_INIT 6
+#define GC_UNDERFINED_SIZE 0

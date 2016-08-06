@@ -3,6 +3,7 @@
 #include "gc_obj.h"
 #include <stddef.h>
 
+/// @brief The alias of the gc context
 typedef struct gc gc_t;
 
 /// @brief Create a new garbag collector context
@@ -26,13 +27,13 @@ void gc_release(gc_t *gc);
 void* gc_alloc(gc_t *gc, size_t size, gc_destrutor objDestr);
 
 /// @brief Indicate a block of memory to let the gc manage it for you
-/// @param gc The context if the garbage collector
-/// @param blc The block of that the gc should manage
-/// @param blcSize The size of the memory block
+/// @param gc The context of the garbage collector
+/// @param blc The block of memory that the gc should manage
+/// @param blcSize The size of the memory block, if it is equal to zero, the object don't have size
 /// @param objDestr The destructor of the object
 /// @pre gc cannot be NULL
 /// @pre blc cannot be NULL
-/// @pre blcSize cannot be equal to 0
+/// @pre blc souldn't be already in the list
 /// @return 0 if the operation success, -1 otherwise
 int gc_push(gc_t *gc, void *blc, size_t blcSize, gc_destrutor objDestr);
 
